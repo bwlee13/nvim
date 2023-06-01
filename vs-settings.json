@@ -13,10 +13,9 @@
   "editor.inlayHints.fontFamily": "Courier New",
   "editor.inlayHints.fontSize": 11,
   "workbench.colorCustomizations": {
-    "[Default Dark+]": {
-      "editorInlayHint.foreground": "#adadadf0",
-      "editorInlayHint.background": "#3d3d3d48"
-    }
+    "editorInlayHint.foreground": "#adadadf0",
+    "editorInlayHint.background": "#3d3d3d48",
+    "editorCursor.foreground": "#B1A2CA"
   },
   "workbench.colorTheme": "Default Dark+",
   "settingsSync.ignoredSettings": [],
