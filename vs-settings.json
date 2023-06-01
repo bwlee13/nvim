@@ -15,7 +15,7 @@
   "workbench.colorCustomizations": {
     "editorInlayHint.foreground": "#adadadf0",
     "editorInlayHint.background": "#3d3d3d48",
-    "editorCursor.foreground": "#B1A2CA"
+    "editorCursor.foreground": "#786f86"
   },
   "workbench.colorTheme": "One Dark Pro Darker",
   "settingsSync.ignoredSettings": [],
