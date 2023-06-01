@@ -1,7 +1,6 @@
 local lsp = require('lsp-zero')
 
 lsp.preset("recommended")
-
 lsp.ensure_installed({
     'tsserver',
     'html',
@@ -13,6 +12,19 @@ lsp.ensure_installed({
 
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics,
+    {
+      virtual_text = false,
+        underline = true,
+    update_in_insert= false
+
+    }
+  )
+-- Show line diagnostics automatically in hover window
+vim.o.updatetime = 250
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -111,12 +123,29 @@ lspconfig["html"].setup({
     on_attach = on_attach,
 })
 
+lspconfig.pyright.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+
 -- configure typescript server with plugin
 typescript.setup({
     server = {
         capabilities = capabilities,
         on_attach = on_attach,
     },
+})
+
+lspconfig.rust_analyzer.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+
+})
+
+lspconfig.sourcekit.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+
 })
 
 -- configure css server

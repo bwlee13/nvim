@@ -8,6 +8,8 @@ return require('packer').startup(function(use)
     use('wbthomason/packer.nvim')
     use('yuezk/vim-js')
     use('maxmellon/vim-jsx-pretty')
+    -- css color shower
+    use('NvChad/nvim-colorizer.lua')
     use('HerringtonDarkholme/yats.vim')
     use('mhartington/formatter.nvim')
     use("jose-elias-alvarez/null-ls.nvim")
@@ -75,7 +77,10 @@ return require('packer').startup(function(use)
     vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+    use('nvim-treesitter/nvim-treesitter-context')
     use('nvim-treesitter/playground')
+    use('mrjones2014/nvim-ts-rainbow')
+    use('windwp/nvim-ts-autotag')
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
@@ -86,10 +91,10 @@ return require('packer').startup(function(use)
     use("onsails/lspkind.nvim")
     use { 'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
-        requires = {          -- LSP Support
+        requires = {                     -- LSP Support
             { 'neovim/nvim-lspconfig' }, -- Required
             {
-                              -- Optional
+                -- Optional
                 'williamboman/mason.nvim',
                 run = function()
                     pcall(vim.cmd, 'MasonUpdate')
@@ -98,16 +103,16 @@ return require('packer').startup(function(use)
             { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
             -- Autocompletion
-            { 'hrsh7th/nvim-cmp' }, -- Required
+            { 'hrsh7th/nvim-cmp' },         -- Required
             { 'neovim/nvim-lspconfig' },
-            { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-            { 'hrsh7th/cmp-buffer' }, -- Optional
-            { 'hrsh7th/cmp-path' }, -- Optional
+            { 'hrsh7th/cmp-nvim-lsp' },     -- Required
+            { 'hrsh7th/cmp-buffer' },       -- Optional
+            { 'hrsh7th/cmp-path' },         -- Optional
             { 'saadparwaiz1/cmp_luasnip' }, -- Optional
-            { 'hrsh7th/cmp-nvim-lua' }, -- Optional
+            { 'hrsh7th/cmp-nvim-lua' },     -- Optional
 
             -- Snippets
-            { 'L3MON4D3/LuaSnip' },  -- Required
+            { 'L3MON4D3/LuaSnip' },             -- Required
             { 'rafamadriz/friendly-snippets' }, -- Optional
         }
     }
@@ -117,7 +122,7 @@ return require('packer').startup(function(use)
             { 'nvim-tree/nvim-web-devicons' },
         },
         config = function()
-            require("nvim-tree").setup()
+            require("nvim-tree").setup({})
         end
     }
     use({
@@ -127,5 +132,13 @@ return require('packer').startup(function(use)
             { "nvim-tree/nvim-web-devicons" },
             { "nvim-treesitter/nvim-treesitter" }
         }
+    })
+    use({
+        "kylechui/nvim-surround",
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require("nvim-surround").setup({
+            })
+        end
     })
 end)
