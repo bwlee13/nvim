@@ -17,7 +17,7 @@
     "editorInlayHint.background": "#3d3d3d48",
     "editorCursor.foreground": "#B1A2CA"
   },
-  "workbench.colorTheme": "Default Dark+",
+  "workbench.colorTheme": "One Dark Pro Darker",
   "settingsSync.ignoredSettings": [],
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
@@ -129,5 +129,11 @@
       "after": ["\"", "_", "d", "d"]
     }
   ],
-  "editor.lineNumbers": "relative"
+  "editor.lineNumbers": "relative",
+  "oneDarkPro.color": {
+    "coral": "#d19a66",
+    "fountainBlue": "#61afef",
+    "malibu": "#56b6c2",
+    "whiskey": "#e06c75"
+  }
 }
