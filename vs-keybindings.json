@@ -11,6 +11,16 @@
     "when": "vim.mode != 'Insert'"
   },
   {
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown",
+    "when": "vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.navigateUp",
+    "when": "vim.mode != 'Insert'"
+  },
+  {
     "key": "ctrl+b",
     "command": "workbench.action.navigateBack",
     "when": "vim.mode != 'Insert'"
@@ -42,11 +52,11 @@
   },
   {
     "key": "ctrl+j",
-    "command": "selectNextCodeAction",
+    "command": "selectNextCodeAction"
   },
   {
     "key": "ctrl+k",
-    "command": "selectPrevCodeAction",
+    "command": "selectPrevCodeAction"
   },
   {
     "key": "ctrl+j",
@@ -126,5 +136,15 @@
     "key": "shift+escape",
     "command": "-closeReferenceSearch",
     "when": "referenceSearchVisible && !config.editor.stablePeek"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "search.focus.nextInputBox",
+    "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible"
+  },
+  {
+    "key": "cmd+down",
+    "command": "-search.focus.nextInputBox",
+    "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible"
   }
 ]
