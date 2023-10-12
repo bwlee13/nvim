@@ -7,7 +7,6 @@
   "editor.minimap.enabled": false,
   "vsicons.dontShowNewVersionMessage": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "window.zoomLevel": 2,
   "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
   "react-native-tools.showUserTips": false,
   "editor.inlayHints.fontFamily": "Courier New",
@@ -142,5 +141,29 @@
     "fountainBlue": "#61afef",
     "malibu": "#56b6c2",
     "whiskey": "#e06c75"
-  }
+  },
+  "files.exclude": {
+    "__pycache__": true,
+    ".idea": true,
+    "**/__pycache__": true
+  },
+  "go.autocompleteUnimportedPackages": true,
+  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+  "[swift]": {},
+  "C_Cpp.default.compilerPath": "/usr/bin/clang",
+  "code-runner.runInTerminal": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "tailwindCSS.includeLanguages": {
+    "rust": "html"
+  },
+  "window.zoomLevel": 1,
+  "go.toolsManagement.autoUpdate": true,
+  "[python]": {
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.formatOnType": true,
+    "editor.wordBasedSuggestions": false
+  },
+  "liveServer.settings.donotShowInfoMsg": true
 }
