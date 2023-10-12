@@ -103,6 +103,44 @@
     "when": "inRustProject"
   },
   {
+    "key": "cmd+'",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        {
+          "command": "terminal.focus"
+        },
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "xcodebuild -workspace PairingsDotAi.xcodeproj/project.xcworkspace -scheme PairingsDotAi clean build -destination 'generic/platform=iOS'"
+          }
+        }
+      ]
+    },
+
+    "when": "resourceLangId == 'swift'"
+  },
+  {
+    "key": "cmd+]",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        {
+          "command": "terminal.focus"
+        },
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "xcrun simctl launch 7937BBF7-8BE6-47C5-9C7C-A99163A99718 com.geistdevelopment.PairingsDotAi"
+          }
+        }
+      ]
+    },
+
+    "when": "resourceLangId == 'swift'"
+  },
+  {
     "key": "ctrl+c",
     "command": "closeReferenceSearch",
     "when": "inReferenceSearchEditor && !config.editor.stablePeek"
@@ -146,5 +184,9 @@
     "key": "cmd+down",
     "command": "-search.focus.nextInputBox",
     "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible"
+  },
+  {
+    "key": "cmd+r",
+    "command": "python.execInTerminal"
   }
 ]
